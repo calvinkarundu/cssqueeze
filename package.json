@@ -1,0 +1,32 @@
+{
+  "name": "cssqueeze",
+  "version": "1.0.0",
+  "description": "Squeeze & Optimize CSS files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/calvinkarundu/cssqueeze.git"
+  },
+  "keywords": [
+    "css",
+    "minify",
+    "prefix",
+    "import",
+    "postcss"
+  ],
+  "author": "Calvin Karundu <calvin.mwenda@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calvinkarundu/cssqueeze/issues"
+  },
+  "homepage": "https://github.com/calvinkarundu/cssqueeze#readme",
+  "dependencies": {
+    "autoprefixer": "^7.1.4",
+    "cssnano": "^3.10.0",
+    "postcss": "^6.0.11",
+    "postcss-import": "^10.0.0"
+  }
+}
