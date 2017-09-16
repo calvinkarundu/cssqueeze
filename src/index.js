@@ -1,28 +1,26 @@
 import fs from 'fs';
 import postcss from 'postcss';
 import atImport from 'postcss-import';
-import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
-const config = {
-    source: '',
-    destination: '',
+const cssqueeze = async ({ config }) => {
+  try {
+    const cssSource = fs.readFileSync(config.source, 'utf8');
+
+    const result = await postcss()
+      .use(atImport())
+      .use(cssnano({ preset: 'advanced' }))
+      .process(cssSource, { from: config.source });
+
+    const destinationFileStream = fs.createWriteStream(config.destination);
+
+    destinationFileStream.write(result.css);
+    destinationFileStream.end();
+
+    return `\nsqueeeeeeeeezed into -> ${config.destination}\n`;
+  } catch (err) {
+    throw err;
+  }
 };
 
-const css = fs.readFileSync(config.source, 'utf8');
-
-postcss()
-  .use(atImport())
-  .use(autoprefixer())
-  .use(cssnano())
-  .process(css, {
-    from: config.source,
-  })
-  .then((result) => {
-    const fileStream = fs.createWriteStream(config.destination);
-    fileStream.write(result.css);
-    fileStream.end();
-  })
-  .catch((err) => {
-      console.log(err);
-  });
+export { cssqueeze as default };
