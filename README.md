@@ -1,6 +1,6 @@
 # cssqueeze
 
-> Optimize CSS files
+> A CLI tool to optimize CSS files
 
 ## What is it?
 
@@ -20,12 +20,14 @@ Usage on the command line:
 
 ```bash
 cssqueeze --source ../source.css --destination ../bundle.min.css
+# squeeeeeeeeezed into -> ./bundle.min.css
 ```
 
 Include a `[hash]` in the destination filename to generate a unique hash code based on the source content:
 
 ```bash
 cssqueeze --source ../source.css --destination ../bundle.[hash].min.css
+# squeeeeeeeeezed into -> ./bundle.0d422da9649ff811b3c90224cca0680c.min.css
 ```
 
 ## Custom configuration
