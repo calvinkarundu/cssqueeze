@@ -32,7 +32,7 @@ See `cssqueeze --help` for more info.
 
 ## Custom Configuration
 
-This tool uses cssnano as the optimization module. By default it wil use all [advanced optimizations](http://cssnano.co/guides/optimisations/#what-optimisations-do-you-support) provided by cssnano.
+This tool uses [cssnano](https://github.com/ben-eb/cssnano) as the optimization module. By default it wil use all [advanced optimizations](http://cssnano.co/guides/optimisations/#what-optimisations-do-you-support) provided by cssnano.
 
 Use the `--config` flag to pass a custom json configuration file. This allows you to enable / disable optimizations and to pass options to the individual optimization modules.
 
