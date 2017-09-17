@@ -17,14 +17,14 @@ $ npm install --global cssqueeze
 ## CLI Usage
 
 ```sh
-$ cssqueeze --source ../source.css --destination ../bundle.min.css
+$ cssqueeze --source source.css --destination bundle.min.css
 # squeezed into -> ./bundle.min.css
 ```
 
 Include a `[hash]` in the destination filename to generate a unique hash code based on the source content:
 
 ```sh
-$ cssqueeze --source ../source.css --destination ../bundle.[hash].min.css
+$ cssqueeze --source source.css --destination bundle.[hash].min.css
 # squeezed into -> ./bundle.0d422da9649ff811b3c90224cca0680c.min.css
 ```
 
@@ -37,7 +37,7 @@ This tool uses [cssnano](https://github.com/ben-eb/cssnano) as the optimization 
 Use the `--config` flag to pass a custom json configuration file. This allows you to enable / disable optimizations and to pass options to the individual optimization modules.
 
 ```sh
-$ cssqueeze --custom ../config.json
+$ cssqueeze --custom config.json
 ```
 
 The following configuration file disables the [postcss-discard-comments](https://github.com/ben-eb/cssnano/tree/master/packages/postcss-discard-comments) plugin and sets [autoprefixer](https://github.com/postcss/autoprefixer) browser targets to those that have more than 5% global usage statistics.
