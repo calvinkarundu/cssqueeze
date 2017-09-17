@@ -45,7 +45,7 @@ const cssqueeze = async ({ config }) => {
     destinationFileStream.write(result.css);
     destinationFileStream.end();
 
-    return `\nsqueeeeeeeeezed into -> ${destinationFileName}\n`;
+    return `\nsqueezed into -> ${destinationFileName}\n`;
   } catch (err) {
     throw err;
   }
