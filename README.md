@@ -40,12 +40,18 @@ Use the `--custom` flag to pass a custom json configuration file. This allows yo
 cssqueeze --custom ../config.json
 ```
 
-Here is an example configuration file.
+The following configuration file disables the [postcss-discard-comments](https://github.com/ben-eb/cssnano/tree/master/packages/postcss-discard-comments) plugin and sets [autoprefixer](https://github.com/postcss/autoprefixer) browser targets to those that have more than 5% global usage statistics.
 
 ```json
-// set browser targets for prefixing.
 {
-  "source": "../source.css",
-  "destination": "../bundle.[hash].min.css",
+  "source": "./source.config.css",
+  "destination": "./bundle.[hash].min.css",
+  "plugins": {
+    "postcss-discard-comments": false,
+    "autoprefixer": {
+      "browsers": ["> 5%"],
+      "add": true
+    }
+  }
 }
 ```
