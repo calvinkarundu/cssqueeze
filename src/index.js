@@ -26,7 +26,9 @@ const cssqueeze = async ({ config }) => {
 
     const result = await postcss()
       .use(atImport())
-      .use(cssnano({ preset: 'advanced' }))
+      .use(cssnano({
+        preset: ['advanced', (config.plugins !== undefined ? config.plugins : {})]
+      }))
       .process(cssSource, { from: config.source });
 
     const genHash = hashRegex.test(config.destination);

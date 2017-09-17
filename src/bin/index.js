@@ -32,10 +32,10 @@ program.parse(process.argv);
 
 const isEmptyArgs = () => {
   const fromStdin = !process.env.__DIRECT__ && !process.stdin.isTTY;
-  const configA = program.source !== undefined && program.destination !== undefined;
-  const configB = program.config !== undefined;
+  const useBasicConfig = program.source !== undefined && program.destination !== undefined;
+  const useCustomConfig = program.config !== undefined;
 
-  if (configA !== true && configB !== true && !fromStdin) return true;
+  if (useBasicConfig !== true && useCustomConfig !== true && !fromStdin) return true;
 
   return false;
 };
@@ -50,20 +50,23 @@ const squeezalicious = async ({ config }) => {
 };
 
 const getConfig = () => {
-  const configA = program.source !== undefined && program.destination !== undefined;
-  const configB = program.config !== undefined;
+  const useBasicConfig = program.source !== undefined && program.destination !== undefined;
+  const useCustomConfig = program.config !== undefined;
 
   let config;
 
-  if (configA) {
+  if (useBasicConfig) {
     config = {
       source: program.source,
       destination: program.destination,
     };
   }
 
-  if (configB) {
-    // read config from json file
+  if (useCustomConfig) {
+    const customConfig = fs.readFileSync(program.config);
+    const customConfigObject = JSON.parse(customConfig);
+
+    config = customConfigObject;
   }
 
   return config;
