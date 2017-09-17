@@ -18,14 +18,14 @@ $ npm install --global cssqueeze
 
 ```sh
 $ cssqueeze --source ../source.css --destination ../bundle.min.css
-# squeeeeeeeeezed into -> ./bundle.min.css
+# squeezed into -> ./bundle.min.css
 ```
 
 Include a `[hash]` in the destination filename to generate a unique hash code based on the source content:
 
 ```sh
 $ cssqueeze --source ../source.css --destination ../bundle.[hash].min.css
-# squeeeeeeeeezed into -> ./bundle.0d422da9649ff811b3c90224cca0680c.min.css
+# squeezed into -> ./bundle.0d422da9649ff811b3c90224cca0680c.min.css
 ```
 
 See `cssqueeze --help` for more info.
