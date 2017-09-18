@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist/ && babel src --out-dir dist --copy-files",
-    "prepare": "npm run build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/calvinkarundu/cssqueeze#readme",
   "preferGlobal": true,
   "bin": {
-    "cssqueeze": "./dist/bin/index.js"
+    "cssqueeze": "dist/bin/index.js"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
