@@ -31,13 +31,12 @@ const cssqueeze = async ({ config }) => {
       }))
       .process(cssSource, { from: config.source });
 
-    const genHash = hashRegex.test(config.destination);
+    const generateHash = hashRegex.test(config.destination);
+    let hashCode;
 
-    const hashCode = genHash
-      ? await generateHashCode(result.css)
-      : '';
+    if (generateHash === true) hashCode = await generateHashCode(result.css);
 
-    const destinationFileName = genHash
+    const destinationFileName = generateHash
       ? config.destination.replace(hashRegex, hashCode)
       : config.destination;
 
