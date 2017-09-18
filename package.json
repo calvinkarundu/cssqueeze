@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf build/ && babel src --out-dir build --copy-files",
-    "prepare": "npm run build"
+    "build": "rm -rf build && babel src --out-dir build --copy-files",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,17 +26,22 @@
   },
   "homepage": "https://github.com/calvinkarundu/cssqueeze#readme",
   "preferGlobal": true,
+  "files": [
+    "build"
+  ],
   "bin": {
-    "cssqueeze": "./build/bin/index.js"
+    "cssqueeze": "build/bin/index.js"
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
     "commander": "^2.11.0",
     "cssnano": "^4.0.0-rc.2",
     "cssnano-preset-advanced": "^4.0.0-rc.2",
     "postcss": "^6.0.11",
     "postcss-import": "^10.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
   }
 }

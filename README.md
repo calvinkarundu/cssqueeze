@@ -11,7 +11,7 @@ A CLI tool that runs CSS files through a set of optimizations provided by [cssna
 Install via [npm](https://www.npmjs.com/) which is bundled with [node](https://nodejs.org/en/):
 
 ```sh
-$ npm install --global cssqueeze
+$ npm install -g cssqueeze
 ```
 
 ## CLI Usage
