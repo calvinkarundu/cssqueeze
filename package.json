@@ -1,6 +1,6 @@
 {
   "name": "cssqueeze",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A CLI wrapper for cssnano",
   "main": "index.js",
   "scripts": {
