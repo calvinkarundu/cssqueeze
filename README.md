@@ -1,6 +1,6 @@
 # cssqueeze
 
-> A CLI tool to optimize CSS files
+> A CLI wrapper for cssnano
 
 ## What is it?
 

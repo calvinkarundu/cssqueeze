@@ -1,7 +1,7 @@
 {
   "name": "cssqueeze",
   "version": "1.0.9",
-  "description": "A CLI tool to optimize CSS files",
+  "description": "A CLI wrapper for cssnano",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,10 +13,12 @@
     "url": "git+ssh://git@github.com/calvinkarundu/cssqueeze.git"
   },
   "keywords": [
+    "cli",
     "css",
+    "cssnano",
     "minify",
-    "prefix",
-    "import",
+    "optimization",
+    "optimize-css-files",
     "postcss"
   ],
   "author": "Calvin Karundu <calvin.mwenda@gmail.com>",
